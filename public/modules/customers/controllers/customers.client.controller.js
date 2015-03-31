@@ -1,12 +1,25 @@
 'use strict';
 
 // Customers controller
-angular.module('customers').controller('CustomersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Customers',
-	function($scope, $stateParams, $location, Authentication, Customers) {
-		$scope.authentication = Authentication;
+
+var customersApp = angular.module('customers');
+
+customersApp.controller('CustomersController', ['$scope', '$stateParams', 'Authentication', 'Customers',
+	function($scope, $stateParams, Authentication, Customers) {
+
+		this.authentication = Authentication;
+
+		// Find a list of Customers
+		this.customers = Customers.query();
+
+	}
+]);
+
+customersApp.controller('CustomersCreateController', ['$scope', 'Customers',
+	function($scope, Customers) {
 
 		// Create new Customer
-		$scope.create = function() {
+		this.create = function() {
 			// Create new Customer object
 			var customer = new Customers ({
 				firstName: this.firstName,
@@ -40,6 +53,18 @@ angular.module('customers').controller('CustomersController', ['$scope', '$state
 			});
 		};
 
+	}
+]);
+
+customersApp.controller('CustomersEditController', ['$scope', 'Customers',
+	function($scope, Customers) {
+
+	}
+]);
+
+
+/*
+
 		// Remove existing Customer
 		$scope.remove = function(customer) {
 			if ( customer ) { 
@@ -67,16 +92,12 @@ angular.module('customers').controller('CustomersController', ['$scope', '$state
 			});
 		};
 
-		// Find a list of Customers
-		$scope.find = function() {
-			$scope.customers = Customers.query();
-		};
+
 
 		// Find existing Customer
 		$scope.findOne = function() {
 			$scope.customer = Customers.get({ 
 				customerId: $stateParams.customerId
 			});
-		};
-	}
-]);
+		};*/
+
