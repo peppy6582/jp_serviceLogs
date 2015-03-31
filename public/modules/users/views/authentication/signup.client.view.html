@@ -1,18 +1,63 @@
 <section class="row" data-ng-controller="AuthenticationController">
-	<h3 class="col-md-12 text-center">Login</h3>
-    <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-    </div>
-
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-        <span class="input-group-addon" id="basic-addon2">@example.com</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-addon">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-        <span class="input-group-addon">.00</span>
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
+        <h3 class="col-md-12 text-center">Sign Up</h3>
+        <form name="userform" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+            <fieldset>
+                <div class="form-group">
+                    <div data-ng-show="error" class="text-center text-danger">
+                        <div class="alert alert-danger" role="alert">
+                            <strong data-ng-bind="error"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-star"></i>
+                        </span>
+                        <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-star"></i>
+                        </span>
+                        <input type="text" required id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-envelope"></i>
+                        </span>
+                        <input type="text" required id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-asterisk"></i>
+                        </span>
+                        <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="text-center form-group login-btn">
+                        <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+                        <a href="/#!/signin" class="show-signup">Sign In</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </section>
