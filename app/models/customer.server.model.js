@@ -15,7 +15,7 @@ var CustomerSchema = new Schema({
 		default: '',
 		trim: true
 	},
-	surName: {
+	lastName: {
 		type: String,
 		default: '',
 		trim: true
@@ -25,7 +25,7 @@ var CustomerSchema = new Schema({
 		default: '',
 		trim: true
 	},
-	sountry: {
+	country: {
 		type: String,
 		default: '',
 		trim: true
