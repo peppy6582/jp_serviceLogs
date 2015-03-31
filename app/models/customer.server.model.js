@@ -10,13 +10,56 @@ var mongoose = require('mongoose'),
  * Customer Schema
  */
 var CustomerSchema = new Schema({
-	name: {
+	firstName: {
 		type: String,
 		default: '',
-		required: 'Please fill Customer name',
+		trim: true
+	},
+	surName: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	suburb: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	sountry: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	industry: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	email: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	phone: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	referred: {
+		type: Boolean,
+		default: '',
+		trim: true
+	},
+	channel: {
+		type: String,
+		default: '',
 		trim: true
 	},
 	created: {
+		type: Date,
+		default: Date.now
+	},
+	modified: {
 		type: Date,
 		default: Date.now
 	},
